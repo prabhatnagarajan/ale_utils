@@ -106,6 +106,71 @@ GAMES = ['Adventure',
 	'Zaxxon',
 	]
 
+# Atari-57 taken from
+ATARI_57 = [
+	'Alien',
+	'Amidar',
+	'Assault',
+	'Asterix',
+	'Asteroids',
+	'Atlantis',
+	'BankHeist',
+	'BattleZone',
+	'BeamRider'
+	'Berzerk',
+	'Bowling',
+	'Boxing',
+	'Breakout',
+	'Centipede',
+	'ChopperCommand',
+	'CrazyClimber',
+	'Defender',
+	'DemonAttack',
+	'DoubleDunk',
+	'Enduro',
+	'FishingDerby',
+	'Freeway',
+	'Frostbite',
+	'Gopher',
+	'Gravitar',
+	'Hero',
+	'IceHockey',
+	'Jamesbond',
+	'Kangaroo',
+	'Krull',
+	'KungFuMaster',
+	'MontezumaRevenge',
+	'MsPacman',
+	'NameThisGame',
+	'Phoenix',
+	'Pitfall',
+	'Pong',
+	'PrivateEye',
+	'Qbert',
+	'Riverraid',
+	'RoadRunner',
+	'Robotank',
+	'Seaquest',
+	'Skiing',
+	'Solaris',
+	'SpaceInvaders',
+	'StarGunner',
+	'Surround',
+	'Tennis',
+	'TimePilot',
+	'Tutankham',
+	'UpNDown',
+	'Venture',
+	'VideoPinball',
+	'WizardOfWor',
+	'YarsRevenge',
+	'Zaxxon',
+]
+
+
+ATARI_5 = ['BattleZone', 'DoubleDunk', 'NameThisGame', 'Phoenix', 'Qbert']
+
+ATARI_10 = ATARI_5 + ['Amidar', 'Bowling', 'Frostbite', 'KungFuMaster', 'Riverraid']
 
 
 if __name__ == '__main__':
@@ -114,6 +179,15 @@ if __name__ == '__main__':
                          full_action_space=False, frameskip=1,
                          max_num_frames_per_episode=30 * 60 * 60)
 	for game in GAMES:
+		gym_string = 'ALE/' + game + '-v5'
+		env = gymnasium.make(gym_string,
+                         repeat_action_probability=0.0,
+                         full_action_space=False, frameskip=1,
+                         max_num_frames_per_episode=30 * 60 * 60)
+		print(f"{gym_string}:{env.action_space.n}")
+	print()
+	print("ATARI-10")
+	for game in ATARI_10:
 		gym_string = 'ALE/' + game + '-v5'
 		env = gymnasium.make(gym_string,
                          repeat_action_probability=0.0,
