@@ -106,7 +106,7 @@ GAMES = ['Adventure',
 	'Zaxxon',
 	]
 
-# Atari-57 taken from
+# Atari-57 taken from Table H.4 of https://arxiv.org/pdf/2003.13350 (Agent57 paper)
 ATARI_57 = [
 	'Alien',
 	'Amidar',
