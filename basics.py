@@ -116,7 +116,7 @@ ATARI_57 = [
 	'Atlantis',
 	'BankHeist',
 	'BattleZone',
-	'BeamRider'
+	'BeamRider',
 	'Berzerk',
 	'Bowling',
 	'Boxing',
@@ -166,6 +166,8 @@ ATARI_57 = [
 	'YarsRevenge',
 	'Zaxxon',
 ]
+
+assert len(ATARI_57) == 57
 
 
 ATARI_5 = ['BattleZone', 'DoubleDunk', 'NameThisGame', 'Phoenix', 'Qbert']

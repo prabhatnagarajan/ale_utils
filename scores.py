@@ -1,14 +1,16 @@
+import basics
 
+# Taken from Table H.4 of https://arxiv.org/pdf/2003.13350 (Agent57 paper)
 RND_SCORES_ATARI_57 = {
-	'Alien':,
-	'Amidar':,
-	'Assault':,
-	'Asterix':,
-	'Asteroids':,
-	'Atlantis':,
-	'BankHeist':,
-	'BattleZone':,
-	'BeamRider':,
+	'Alien': 227.80,
+	'Amidar': 5.80,
+	'Assault': 222.40,
+	'Asterix': 210.00,
+	'Asteroids': 719.10,
+	'Atlantis': 12850.00,
+	'BankHeist': 14.20,
+	'BattleZone': 2360.00,
+	'BeamRider': 363.90,
 	'Berzerk': 123.70,
 	'Bowling': 23.10,
 	'Boxing': 0.10,
@@ -27,7 +29,7 @@ RND_SCORES_ATARI_57 = {
 	'Gravitar': 173.00,
 	'Hero': 1027.00,
 	'IceHockey': -11.20,
-	'JamesBond': 29.00,
+	'Jamesbond': 29.00,
 	'Kangaroo': 52.00,
 	'Krull': 1598.00,
 	'KungFuMaster': 258.50,
@@ -87,7 +89,7 @@ HUMAN_SCORES_ATARI_57 = {
 	'Gravitar': 3351.40,
 	'Hero': 30826.40,
 	'IceHockey': 0.90,
-	'JamesBond': 302.80,
+	'Jamesbond': 302.80,
 	'Kangaroo': 3035.00,
 	'Krull': 2665.50,
 	'KungFuMaster': 22736.30,
@@ -119,5 +121,10 @@ HUMAN_SCORES_ATARI_57 = {
 	'Zaxxon': 9173.30,
 }
 
-# TODO assert that the keys of both dictionaries match the Atari-57 list
-# TODO: Cite taken from Table H.4 of https://arxiv.org/pdf/2003.13350 (Agent57 paper)
+human_keys = HUMAN_SCORES_ATARI_57.keys()
+rnd_keys = RND_SCORES_ATARI_57.keys()
+assert human_keys == rnd_keys
+human_keys_as_list = sorted([*human_keys])
+rnd_keys_as_list = sorted([*rnd_keys])
+assert human_keys_as_list == rnd_keys_as_list
+assert human_keys_as_list == basics.ATARI_57
