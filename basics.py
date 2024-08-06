@@ -106,7 +106,7 @@ GAMES = ['Adventure',
 	'Zaxxon',
 	]
 
-# Atari-57 taken from
+# Atari-57 taken from Table H.4 of https://arxiv.org/pdf/2003.13350 (Agent57 paper)
 ATARI_57 = [
 	'Alien',
 	'Amidar',
@@ -116,7 +116,7 @@ ATARI_57 = [
 	'Atlantis',
 	'BankHeist',
 	'BattleZone',
-	'BeamRider'
+	'BeamRider',
 	'Berzerk',
 	'Bowling',
 	'Boxing',
@@ -166,6 +166,8 @@ ATARI_57 = [
 	'YarsRevenge',
 	'Zaxxon',
 ]
+
+assert len(ATARI_57) == 57
 
 
 ATARI_5 = ['BattleZone', 'DoubleDunk', 'NameThisGame', 'Phoenix', 'Qbert']
