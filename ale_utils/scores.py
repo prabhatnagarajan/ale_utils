@@ -1,4 +1,4 @@
-import basics
+from ale_utils import basics
 
 # Taken from Table H.4 of https://arxiv.org/pdf/2003.13350 (Agent57 paper)
 RND_SCORES_ATARI_57 = {
