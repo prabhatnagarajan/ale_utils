@@ -1,4 +1,10 @@
 from ale_utils import basics
+import atari_data
+from pdb import set_trace
+import re
+
+def convert_to_snake_case(s):
+    return re.sub(r'(?<!^)(?=[A-Z])', '_', s).lower()
 
 # Taken from Table H.4 of https://arxiv.org/pdf/2003.13350 (Agent57 paper)
 RND_SCORES_ATARI_57 = {
@@ -128,3 +134,12 @@ human_keys_as_list = sorted([*human_keys])
 rnd_keys_as_list = sorted([*rnd_keys])
 assert human_keys_as_list == rnd_keys_as_list
 assert human_keys_as_list == basics.ATARI_57
+
+for game in HUMAN_SCORES_ATARI_57.keys():
+	snake_case_game = convert_to_snake_case(game)
+	rnd, human = atari_data._ATARI_DATA[snake_case_game]
+	assert HUMAN_SCORES_ATARI_57[game] == human
+	if game == 'VideoPinball':
+		continue
+	assert RND_SCORES_ATARI_57[game] == rnd, f"{RND_SCORES_ATARI_57[game]} vs {rnd}"
+
