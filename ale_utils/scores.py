@@ -1,6 +1,4 @@
-from ale_utils import basics
-import atari_data
-from pdb import set_trace
+from ale_utils import basics, atari_data
 import re
 
 def convert_to_snake_case(s):
